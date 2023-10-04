@@ -5,3 +5,5 @@
 <li><a href="https://github.com/LSPosed/LSPosed">LSPosed</a></li>
 <li><a href="https://github.com/Xposed-Modules-Repo">Xposed Modules</a></li>
 <li><a href="https://github.com/topics/xposed">Xposed</a></li>
+<li><a href="https://developer.android.com/">Developers</a></li>
+<li><a href="https://gradle.org/">Gradle</a></li>

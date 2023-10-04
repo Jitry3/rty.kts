@@ -7,3 +7,4 @@
 <li><a href="https://github.com/topics/xposed">Xposed</a></li>
 <li><a href="https://developer.android.com/">Developers</a></li>
 <li><a href="https://gradle.org/">Gradle</a></li>
+<li><a href="https://kernelsu.org/">KernelSU</a></li>

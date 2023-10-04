@@ -1,1 +1,1 @@
-# <a href="https://github.com/RikkaApps/Shizuku"">Shizuku</a>
+# <a href="https://github.com/RikkaApps/Shizuku">Shizuku</a>

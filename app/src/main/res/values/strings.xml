@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_atyy">下载</string>
+    <string name="title_call">相册</string>
+    <string name="title_home">模块</string>
+    <string name="title_dashboard">终端</string>
+    <string name="title_settings">设置</string>
+    <string name="app_name">Xilu-x</string>
+
+</resources>

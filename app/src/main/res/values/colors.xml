@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <color name="com_app">#D8EE1DED</color>
+    <color name="com_apps">#F5DF49F1</color>
+    <color name="notification_color">#33E20AE8</color>
+</resources>

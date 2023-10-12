@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+    
+    <item
+        android:title="@string/uto_1"
+        android:icon="@drawable/ic_apps_black_24dp" />
+
+    <item
+        android:title="@string/uto_2"
+        android:icon="@drawable/ic_apps_black_24dp" />
+
+    <item
+        android:title="@string/uto_3"
+        android:icon="@drawable/ic_apps_black_24dp" />
+
+    <item
+        android:title="@string/uto_4"
+        android:icon="@drawable/ic_apps_black_24dp" />
+
+    <item
+        android:title="@string/uto_5"
+        android:icon="@drawable/ic_apps_black_24dp" />
+    
+    <item
+        android:title="@string/uto_6"
+        android:icon="@drawable/ic_apps_black_24dp" />
+
+    <item
+        android:title="@string/uto_7"
+        android:icon="@drawable/ic_apps_black_24dp" />
+
+    <item
+        android:title="@string/uto_8"
+        android:icon="@drawable/ic_settings_black_24dp" />
+
+    </group>
+    
+</menu>

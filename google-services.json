@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "24330758940",
+    "project_id": "apply-52881",
+    "storage_bucket": "apply-52881.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:24330758940:android:02e983f08ec4be7e2e68d9",
+        "android_client_info": {
+          "package_name": "com.android.kvc.xiao.v2.miui"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_ZoZiayw7ZGsu_uXIdNZZwHayjodPk8k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

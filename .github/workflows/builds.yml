@@ -26,7 +26,7 @@ jobs:
           ndk-version: '24.0.8215888'
       
       - name: Set up Gradle
-        uses: gradle/wrapper-action@v2
+        uses: gradle/wrapper@v2
         with:
           gradle-version: '8.1.2'
       

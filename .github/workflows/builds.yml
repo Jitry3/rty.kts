@@ -47,7 +47,7 @@ jobs:
       - name: Deploy to Firebase App Distribution - Debug
         uses: wzieba/Firebase-Distribution-Github-Action@v1
         with:
-          app_id: ${{ secrets.FIREBASE_APP_ID }}
+          app_id: ${{ secrets.APPLY }}
           token: ${{ secrets.FIREBASE_TOKEN }}
           groups: 'internal-testers'
           apk_path: app/build/outputs/apk/debug/app-debug.apk

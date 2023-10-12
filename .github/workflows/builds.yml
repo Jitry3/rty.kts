@@ -25,16 +25,21 @@ jobs:
           sdk-platform: 'android-34'
           ndk-version: '24.0.8215888'
       
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      
       - name: Build with Gradle
         run: ./gradlew build
 
-      # Add additional steps as needed, such as running tests or deploying the project
-
       - name: Run Unit Tests
         run: ./gradlew test
-      
+
       - name: Build APK
         run: ./gradlew assembleDebug
+
+      # Add more steps for deployment or other tasks
 
       - name: Run Instrumented Tests
         run: ./gradlew connectedAndroidTest
@@ -45,5 +50,3 @@ jobs:
           app_id: ${{ secrets.FIREBASE_APP_ID }}
           token: ${{ secrets.FIREBASE_TOKEN }}
           groups: 'internal-testers'
-
-      # Add more steps for deployment or other tasks

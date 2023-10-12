@@ -130,6 +130,8 @@
             <meta-data
                  android:name="android.view.animation.activityOpenEnterAnimation"
                  android:resource="@mipmap/application_you" />
+            <meta-data android:name="android.app.shortcuts"
+                 android:resource="@xml/shortcuts" />
         </activity>
         
         <provider
@@ -163,6 +165,26 @@
         android:exported="false"
         android:directBootAware="true"
         android:permission="android.permission.FOREGROUND_SERVICE"  />
+        
+        <activity
+            android:name=".activity.v1.Apps1"
+            android:exported="true" />
+        
+        <activity
+            android:name=".activity.v2.Apps2"
+            android:exported="true" />
+        
+        <activity
+            android:name=".activity.v3.Apps3"
+            android:exported="true" />
+        
+        <activity
+            android:name=".activity.v4.Apps4"
+            android:exported="true" />
+        
+        <activity
+            android:name=".activity.v5.Apps5"
+            android:exported="true" />
         
     </application>
 </manifest>

@@ -11,7 +11,7 @@
     <ImageView
          android:layout_height="48dp"
          android:layout_width="48dp"
-         android:src="@mipmap/android_notification"
+         android:src="@drawable/ic_settings"
          android:id="@+id/appIconImageView"/>
 
     <TextView

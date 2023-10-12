@@ -42,21 +42,6 @@ jobs:
       - name: Run Instrumented Tests
         run: ./gradlew connectedAndroidTest
 
-      - name: Deploy to Firebase App Distribution - Debug
-        uses: wzieba/Firebase-Distribution-Github-Action@v1
-        with:
-          app_id: ${{ secrets.APPLY }}
-          token: ${{ secrets.FIREBASE_TOKEN }}
-          groups: 'internal-testers'
-          apk_path: app/build/outputs/apk/debug/app-debug.apk
-
+      
       - name: Build APK - Release
         run: ./gradlew assembleRelease
-
-      - name: Deploy to Firebase App Distribution - Release
-        uses: wzieba/Firebase-Distribution-Github-Action@v1
-        with:
-          app_id: ${{ secrets.APPLY }}
-          token: ${{ secrets.FIREBASE_TOKEN }}
-          groups: 'internal-testers'
-          apk_path: app/build/outputs/apk/release/app-release.apk

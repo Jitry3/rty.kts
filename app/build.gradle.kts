@@ -15,8 +15,8 @@ android {
         applicationId = "com.android.kvc.xiao.v2.miui"
         minSdk = 24
         targetSdk = 34
-        versionCode = 10
-        versionName = "2023100416"
+        versionCode = 12
+        versionName = "2023101220"
         
         vectorDrawables { 
             useSupportLibrary = true
@@ -51,6 +51,17 @@ android {
             keyPassword = "cfyut3sdgnk7ioy6fyjnd08uoteq4p"
         }
         
+        create("apply") {
+        // 签名路径，签名文件，.bks 或 .jks
+            storeFile = file("apply/apply.keystore")
+        // 签名密钥库
+            storePassword = "ygsjkks3hjs8ghiks0hjijs3jjs7wry"
+        // 签名别名
+            keyAlias = "apply"
+        //签名私钥
+            keyPassword = "gyui7erjj3iokp5shjj6dhwyu9iytoi"
+        }
+        
     }
 
     buildTypes {
@@ -71,8 +82,8 @@ android {
     buildFeatures {
         viewBinding = true
         dataBinding = true
+        
     }
-    
     
 }
 
@@ -111,4 +122,9 @@ dependencies {
     implementation("androidx.room:room-ktx:2.5.0")
     annotationProcessor("androidx.room:room-compiler:2.5.0")
     implementation("androidx.fragment:fragment-ktx:1.6.1")
+    implementation("androidx.recyclerview:recyclerview:1.2.1")
+    implementation("androidx.recyclerview:recyclerview-selection:1.1.0")
+    implementation("androidx.drawerlayout:drawerlayout:1.1.1")
+    implementation("androidx.slidingpanelayout:slidingpanelayout:1.2.0")
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
 }

@@ -25,11 +25,6 @@ jobs:
           sdk-platform: 'android-34'
           ndk-version: '24.0.8215888'
       
-      - name: Set up Kotlin
-        uses: actions/setup-kotlin@v1
-        with:
-          kotlin-version: '1.9.10'
-      
       - name: Set up Gradle
         uses: gradle/wrapper-action@v2
         with:

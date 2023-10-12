@@ -82,11 +82,11 @@ class NotificationService : Service() {
         
 
          // 设置自定义布局中的文本内容
-        val titleText = "涩涩的小瑶宝"
+        val titleText = "运行状态：正在运行"
          customView.setTextViewText(R.id.titleTextView, titleText)
 
         // 设置自定义布局中的应用图标
-    val iconResource = R.mipmap.android_notification
+    val iconResource = R.drawable.ic_settings
     customView.setImageViewResource(R.id.appIconImageView, iconResource)
          
          

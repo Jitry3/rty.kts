@@ -51,11 +51,17 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 import com.android.kvc.xiao.v2.miui.databinding.ActivityMainBinding
 
+import com.google.android.material.navigation.NavigationView
 
-class MainActivity : AppCompatActivity() {
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-    private val animationImage = "com.android.app.webp"
+import com.google.android.material.bottomappbar.BottomAppBar
 
+import androidx.drawerlayout.widget.DrawerLayout
+
+public class MainActivity : AppCompatActivity() {
+
+    
     private lateinit var binding: ActivityMainBinding
     
     private companion object {
@@ -67,7 +73,6 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var sharedPreferences: SharedPreferences
     
-    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -77,35 +82,11 @@ class MainActivity : AppCompatActivity() {
         val serviceIntent = Intent(this, NotificationService::class.java)
 startService(serviceIntent)
 
-     // 启动动画
-      val imageView: ImageView = findViewById(R.id.imageView)
-
-        try {
-            val inputStream = assets.open(animationImage)
-            val bitmap = BitmapFactory.decodeStream(inputStream)
-            imageView.setImageBitmap(bitmap)
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-
-        // 将ImageView的透明度设置
-        imageView.alpha = 0.45f
+       // 侧滑栏
+   val navigationView: NavigationView = binding.navigationViewUto
         
-        // 签名校验 第一层
-        val keystoreFileName = "file:///android_asset/arm64-v8a.keystore" // 替换为 arm64-v8a.keystore 的实际文件名
-        val keystorePassword = "cfyut3sdgnk7ioy6fyjnd08uoteq4p" 
-        val keyAlias = "arm" 
-
-        val isSignatureValid = verifySignatureWithKeystore(this, keystoreFileName, keystorePassword, keyAlias)
-
-        if (isSignatureValid) {
-            // 签名有效的逻辑处理
-            println("Signature is valid.")
-        } else {
-            // 签名无效的逻辑处理
-            println("Signature is invalid.")
-        }
-        
+        // 获取 DrawerLayout 实例
+        val drawerLayout = binding.container
         
         // 所有文件权限请求 和 悬浮窗权限请求
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
@@ -153,18 +134,7 @@ for (folderName in folderNames) {
     }
 }
 
-        val navController = findNavController(R.id.nav_host_fragment_activity_main)
-
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_atyy, R.id.navigation_call, R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_settings
-            )
-        )
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        binding.navView.setupWithNavController(navController)
-    }
+          }
     
     /*
     private fun requestRootPermission() {
@@ -269,38 +239,6 @@ for (folderName in folderNames) {
 
     private fun showToast(message: String) {
         // 显示 Toast 消息
-    }
-    
-    private fun verifySignatureWithKeystore(
-        context: Context,
-        keystoreFileName: String,
-        keystorePassword: String,
-        keyAlias: String
-    ): Boolean {
-        try {
-            // 获取 AssetManager
-            val assetManager: AssetManager = context.assets
-
-            // 打开密钥库文件流
-            val keystoreFile: InputStream = assetManager.open(keystoreFileName)
-
-            // 加载密钥库
-            val keystore = KeyStore.getInstance(KeyStore.getDefaultType())
-            keystore.load(keystoreFile, keystorePassword.toCharArray())
-
-            // 获取公钥
-            val publicKey = keystore.getCertificate(keyAlias).publicKey
-
-            // 校验签名
-            val signature = Signature.getInstance("SHA384withRSA")
-            signature.initVerify(publicKey)
-
-            // 返回签名的验证结果
-            return true
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-        return false
     }
     
 }

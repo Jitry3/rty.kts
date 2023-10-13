@@ -23,7 +23,6 @@ jobs:
         uses: android-actions/setup-android@v3
         with:
           sdk-platform: 'android-34'
-          ndk-version: '24.0.8215888'
       
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -54,11 +53,3 @@ jobs:
 
       - name: Build APK - Release
         run: ./gradlew assembleRelease
-
-      - name: Deploy to Firebase App Distribution - Release
-        uses: wzieba/Firebase-Distribution-Github-Action@v1
-        with:
-          app_id: ${{ secrets.APPLY }}
-          token: ${{ secrets.FIREBASE_TOKEN }}
-          groups: 'internal-testers'
-          apk_path: app/build/outputs/apk/release/app-release.apk

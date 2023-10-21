@@ -3,7 +3,7 @@ plugins {
     id("com.android.application")
     id("kotlin-android")
     id("org.jetbrains.kotlin.android") version "1.9.10"
-    id("com.google.gms.google-services")
+    
 }
 
 android {
@@ -14,10 +14,10 @@ android {
     
     defaultConfig {
         applicationId = "com.android.kvc.xiao.v2.miui"
-        minSdk = 24
+        minSdk = 27
         targetSdk = 34
-        versionCode = 12
-        versionName = "2023101220"
+        versionCode = 14
+        versionName = "2023102012"
         
         vectorDrawables { 
             useSupportLibrary = true
@@ -128,6 +128,5 @@ dependencies {
     implementation("androidx.drawerlayout:drawerlayout:1.1.1")
     implementation("androidx.slidingpanelayout:slidingpanelayout:1.2.0")
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
-    implementation("com.google.firebase:firebase-analytics-ktx")
-    implementation(platform("com.google.firebase:firebase-bom:32.3.1"))
+    
 }

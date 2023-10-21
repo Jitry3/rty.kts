@@ -66,7 +66,7 @@
     <!-- 此应用可显示在其他应用上方 -->
     <uses-permission 
         android:name="android.permission.SYSTEM_ALERT_WINDOW"
-        android:minSdkVersion="26" />
+        android:minSdkVersion="28" />
     
     <application 
         android:allowBackup="true"
@@ -75,6 +75,7 @@
         android:extractNativeLibs="true"
         android:resizeableActivity="true"
         android:usesCleartextTraffic="true"
+        android:appCategory="productivity"
         android:networkSecurityConfig="@xml/network_security_config"
         android:icon="@mipmap/ic_launcher" 
         android:roundIcon="@mipmap/ic_launcher" 
@@ -100,8 +101,12 @@
         
         <activity 
             android:name="MainActivity" 
-            android:launchMode="standard"
-            android:windowSoftInputMode="stateUnchanged"
+            android:launchMode="singleInstancePerTask"
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait"
+            android:resizeableActivity="true"
+            android:directBootAware="false"
+            android:immersive="true"
             android:exported="true">
             <intent-filter>
                 <action 
@@ -134,6 +139,13 @@
                  android:resource="@xml/shortcuts" />
         </activity>
         
+        <activity-alias
+             android:name="com.android.kvc.xiao.v2.miui.activity.MainActivity"
+             android:exported="true"
+             android:enabled="true"
+             android:targetActivity="com.android.kvc.xiao.v2.miui.MainActivity">
+        </activity-alias>
+        
         <provider
             android:name="androidx.core.content.FileProvider"
             android:exported="false"
@@ -143,14 +155,7 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/y" />
        </provider>
-        
-    <service
-        android:name=".NotificationService"
-        android:enabled="true"
-        android:exported="false"
-        android:directBootAware="true"
-        android:permission="android.permission.FOREGROUND_SERVICE"  />
-         
+       
 <provider
     android:name="rikka.shizuku.ShizukuProvider"
     android:authorities="com.android.kvc.xiao.v2.miui.shizuku"
@@ -158,6 +163,13 @@
     android:enabled="true"
     android:exported="true"
     android:permission="android.permission.INTERACT_ACROSS_USERS_FULL" />
+        
+    <service
+        android:name=".NotificationService"
+        android:enabled="false"
+        android:exported="false"
+        android:directBootAware="false"
+        android:permission="android.permission.FOREGROUND_SERVICE"  />
 
     <service
         android:name=".MtService"
@@ -166,25 +178,37 @@
         android:directBootAware="true"
         android:permission="android.permission.FOREGROUND_SERVICE"  />
         
-        <activity
-            android:name=".activity.v1.Apps1"
-            android:exported="true" />
+    <service
+        android:name=".GetService"
+        android:enabled="true"
+        android:exported="false"
+        android:directBootAware="true"
+        android:permission="android.permission.FOREGROUND_SERVICE"  />
         
         <activity
-            android:name=".activity.v2.Apps2"
-            android:exported="true" />
+            android:name=".activity.Apps1"
+            android:exported="true"
+            android:enabled="true" />
         
         <activity
-            android:name=".activity.v3.Apps3"
-            android:exported="true" />
+            android:name=".activity.Apps2"
+            android:exported="true"
+            android:enabled="true" />
         
         <activity
-            android:name=".activity.v4.Apps4"
-            android:exported="true" />
+            android:name=".activity.Apps3"
+            android:exported="true"
+            android:enabled="true" />
         
         <activity
-            android:name=".activity.v5.Apps5"
-            android:exported="true" />
+            android:name=".activity.Apps4"
+            android:exported="true"
+            android:enabled="true" />
+        
+        <activity
+            android:name=".activity.Apps5"
+            android:exported="true"
+            android:enabled="true" />
         
     </application>
 </manifest>

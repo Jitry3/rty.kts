@@ -14,13 +14,20 @@ android {
     
     defaultConfig {
         applicationId = "com.android.kvc.xiao.v2.miui"
-        minSdk = 27
+        minSdk = 32
         targetSdk = 34
-        versionCode = 14
-        versionName = "2023102012"
+        versionCode = 16
+        versionName = "2023102212"
         
         vectorDrawables { 
             useSupportLibrary = true
+        }
+        
+        externalNativeBuild {
+            cmake {
+                abiFilters("arm64-v8a", "x86_64")
+                
+            }
         }
         
     }
@@ -40,17 +47,6 @@ android {
     }
     
     signingConfigs {
-    
-        create("app-key") {
-        // 签名路径，签名文件，.bks 或 .jks
-            storeFile = file("keys/arm64-v8a.keystore")
-        // 签名密钥库
-            storePassword = "a6uio67fg7cvuotr071gujnnx3port"
-        // 签名别名
-            keyAlias = "arm"
-        //签名私钥
-            keyPassword = "cfyut3sdgnk7ioy6fyjnd08uoteq4p"
-        }
         
         create("apply") {
         // 签名路径，签名文件，.bks 或 .jks
@@ -71,19 +67,19 @@ android {
             isMinifyEnabled = true
             kotlinOptions.suppressWarnings = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-            signingConfig = signingConfigs.getByName("app-key")
+            signingConfig = signingConfigs.getByName("apply")
         }
         debug {
             isMinifyEnabled = false
             isDebuggable = true
-            signingConfig = signingConfigs.getByName("app-key")
+            signingConfig = signingConfigs.getByName("apply")
         }
     }
 
     buildFeatures {
         viewBinding = true
         dataBinding = true
-        
+        aidl = true
     }
     
 }
@@ -114,6 +110,7 @@ dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.2")
     implementation("androidx.profileinstaller:profileinstaller:1.3.1")
     implementation("androidx.lifecycle:lifecycle-process:2.5.1")
+    annotationProcessor("androidx.lifecycle:lifecycle-compiler:2.5.1")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
@@ -128,5 +125,6 @@ dependencies {
     implementation("androidx.drawerlayout:drawerlayout:1.1.1")
     implementation("androidx.slidingpanelayout:slidingpanelayout:1.2.0")
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+    implementation("org.lsposed.hiddenapibypass:hiddenapibypass:4.3")
     
 }
